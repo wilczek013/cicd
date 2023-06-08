@@ -17,8 +17,6 @@ jobs:
           node-version: "18.x"
       - name: Run app
         run: npm start
-      - name: Check tools
+      - name: Simple curl request
         run: |
-          echo "Checking tools..."
-          curl --version
-          echo "Tools check complete"
+          curl https://dummyjson.com/products/1
