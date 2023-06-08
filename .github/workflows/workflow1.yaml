@@ -17,6 +17,18 @@ jobs:
           node-version: "18.x"
       - name: Run app
         run: npm start
-      - name: Simple curl request
+      - name: Create dummy file
         run: |
-          curl https://dummyjson.com/products/1
+          touch dummy.txt
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        run: |
+          echo "pwd"
+          pwd
+          echo "ls"
+          ls -la
+          echo Deploy
