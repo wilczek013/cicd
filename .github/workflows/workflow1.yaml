@@ -20,6 +20,10 @@ jobs:
       - name: Create dummy file
         run: |
           touch dummy.txt
+          echo pwd
+          pwd
+          echo ls
+          ls -la
   deploy:
     needs: test
     runs-on: ubuntu-latest
