@@ -24,11 +24,19 @@ jobs:
           pwd
           echo ls
           ls -la
+      - uses: actions/cache@v3
+        with:
+          path: dummy.txt
+          key: piesek
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: dummy.txt
+          key: piesek
       - name: Deploy
         run: |
           echo "pwd"
